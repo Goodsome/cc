@@ -2,6 +2,7 @@
 
 import { ref } from 'vue'
 import _ from 'lodash'
+import { message } from 'ant-design-vue'
 
 defineProps({
   msg: String
@@ -10,6 +11,7 @@ defineProps({
 const pokes = ref([])
 const count = ref(0)
 
+console.log(1)
 function calNiu(pokes) {
   const value = []
   for(var i=0; i<5; i++) {
@@ -35,7 +37,11 @@ function calNiu(pokes) {
       }
     }
   }
-  return '没牛'
+  return '没牛2'
+}
+
+function test() {
+  message.error('12321')
 }
 
 </script>
@@ -53,6 +59,7 @@ function calNiu(pokes) {
     />
   </div>
   <div>{{ calNiu(pokes) }}</div>
+  <a-button type="primary" @click="test">test</a-button>
 </template>
 
 <style scoped>
